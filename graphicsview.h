@@ -1,14 +1,18 @@
 #ifndef GRAPHICSVIEW_H
 #define GRAPHICSVIEW_H
 
-#include <QObject>
+#include "QGraphicsView"
 
-class GraphicsView : public QObject
+class GraphicsView : public QGraphicsView
 {
     Q_OBJECT
-public:
-    explicit GraphicsView(QObject *parent = nullptr);
 
+public:
+    GraphicsView(QWidget *parent);
+protected:
+    void fixBackgroundPos();
+    virtual void
+           resizeEvent(QResizeEvent *event);
 signals:
 
 public slots:
